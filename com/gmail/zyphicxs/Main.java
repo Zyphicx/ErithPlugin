@@ -24,6 +24,7 @@ public class Main extends JavaPlugin{
         getCommand("friend").setExecutor(commands);
         getCommand("spawnZombie").setExecutor(commands);
         getCommand("giveItem").setExecutor(commands);
+        getCommand("test").setExecutor(commands);
 
         getLogger().info("Loading mobs...");
         EntityInfo.mobs = MobFile.loadAllMobs();

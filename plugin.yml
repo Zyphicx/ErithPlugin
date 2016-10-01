@@ -48,3 +48,8 @@ commands:
       usage: /giveItem
       permission: erithplugin.giveItem
       permission-message: You don't have permission to use this command.
+   test:
+      description: Testy my testies! ;)
+      usage: /test
+      permission: erithplugin.test
+      permission-message: You don't have permission to use this command.

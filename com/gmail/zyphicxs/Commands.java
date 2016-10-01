@@ -1,9 +1,6 @@
 package com.gmail.zyphicxs;
 
-import entities.CustomEntityZombie;
-import entities.EntityInfo;
-import entities.EntityType;
-import entities.NPC;
+import entities.*;
 import items.EnumAttackSpeed;
 import items.EnumItemAttribute;
 import items.EnumItemQuality;
@@ -20,6 +17,8 @@ import org.bukkit.event.entity.CreatureSpawnEvent;
 import spells.*;
 import utilities.Pair;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -74,13 +73,28 @@ public class Commands implements CommandExecutor{
             EntityType.spawnEntity(new CustomEntityZombie(player.getWorld(), player.getLocation(), EntityInfo.mobs.get(args[0])), player.getLocation());
         }
 
-        if(cmd.getName().equalsIgnoreCase("giveItem")){
+        if(cmd.getName().equalsIgnoreCase("giveItem") && args.length >= 1){
             LinkedHashMap<EnumItemAttribute, Integer> attributes = new LinkedHashMap<EnumItemAttribute, Integer>();
             attributes.put(EnumItemAttribute.BLOOD_LUST, 20);
             attributes.put(EnumItemAttribute.WALK_SPEED, 58);
             attributes.put(EnumItemAttribute.SWAG_FACTOR, -9000);
 
             player.getInventory().addItem(new Weapon("Coolio", org.bukkit.Material.DIAMOND_HOE, EnumItemQuality.ANCIENT, new Pair<Integer, Integer>(420, 1337), 91, EnumAttackSpeed.EXTREMELY_FAST, attributes));
+        }
+
+        if(cmd.getName().equalsIgnoreCase("test")){
+            if(args[0].equalsIgnoreCase("download")){
+                try {
+                    Process p =  Runtime.getRuntime().exec("cmd /c pullChanges.bat", null, Main.instance.getDataFolder());
+                    //for(File file : new File(Main.instance.getDataFolder() + File.separator + "Mobs").listFiles()){
+                    p.waitFor();
+                    EntityInfo.mobs = MobFile.loadAllMobs();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
         }
 
         return true;
