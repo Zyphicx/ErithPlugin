@@ -1,0 +1,50 @@
+name: ErithPlugin
+main: com.gmail.zyphicxs.Main
+version: 0.01
+
+commands:
+   grapple:
+      description: Grapples
+      usage: /grapple
+      permission: erithplugin.grapple
+      permission-message: You don't have permission to use this command.
+   homingarrow:
+      description: Shoots a homing arrow
+      usage: /homingarrow
+      permission: erithplugin.homingarrow
+      permission-message: You don't have permission to use this command.
+   grenade:
+      description: Shoots a grenade
+      usage: /grenade
+      permission: erithplugin.grenade
+      permission-message: You don't have permission to use this command.
+   cogdrive:
+      description: Cogs a drive
+      usage: /cogdrive
+      permission: erithplugin.cogdrive
+      permission-message: You don't have permission to use this command.
+   turret:
+      description: Places a turret
+      usage: /turret
+      permission: erithplugin.turret
+      permission-message: You don't have permission to use this command.
+   friend:
+      description: Let's get friendly!
+      usage: /friend
+      permission: erithplugin.friend
+      permission-message: You don't have permission to use this command.
+   doFriend:
+      description: Let's get friendly with it!
+      usage: /doFriend
+      permission: erithplugin.doFriend
+      permission-message: You don't have permission to use this command.
+   spawnZombie:
+      description: Let's spawn a zombie! #LOL
+      usage: /spawnZombie
+      permission: erithplugin.spawnZombie
+      permission-message: You don't have permission to use this command.
+   giveItem:
+      description: Give yourself an item.
+      usage: /giveItem
+      permission: erithplugin.giveItem
+      permission-message: You don't have permission to use this command.
