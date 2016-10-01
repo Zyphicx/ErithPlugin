@@ -1,1 +1,1 @@
-# ErithPlugin
+Source code for the plugin for the miracle called Erith!!!!!!!!!!!!!!!!!!!!
